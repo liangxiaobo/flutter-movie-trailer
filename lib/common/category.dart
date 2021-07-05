@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +41,6 @@ class _CategoryState extends State<Category>
   void changeTypeIndex(typeIndex) {
     setState(() {
       widget.status = typeIndex;
-//      list.clear();
       getData();
     });
   }
@@ -207,6 +204,7 @@ class _CategoryState extends State<Category>
   bool get wantKeepAlive => true;
 }
 
+/// 底部弹出窗口
 class BottomSheetContent extends StatefulWidget {
   BottomSheetContent(
       {Key? key,
@@ -266,13 +264,18 @@ class _BottomSheetContent extends State<BottomSheetContent> {
                     padding: EdgeInsets.only(bottom: 20),
                     child: Row(
                       children: [
-                        Text(
-                          '分类管理',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black87),
+                        Expanded(
+                          child: Text(
+                            '分类管理',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black87),
+                          ),
                         ),
+                        IconButton(onPressed: () {
+                          Navigator.of(context).pop();
+                        }, icon: Icon(Icons.close)),
                       ],
                     ),
                   ),
@@ -297,14 +300,6 @@ class _BottomSheetContent extends State<BottomSheetContent> {
                         ),
                       );
                     }).toList()
-
-//                    [
-//                      for (final item in snapshot.data!)
-//                        Chip(
-//                          backgroundColor: Colors.red,
-//                          label: Text("${item.name}"),
-//                        )
-//                    ],
                   ),
                 ],
               ),
@@ -433,6 +428,6 @@ class _BottomSheetContent extends State<BottomSheetContent> {
       case 3:
         // TODO: 评分的业务逻辑
     }
-    return Text('失误');
+    return SizedBox();
   }
 }
