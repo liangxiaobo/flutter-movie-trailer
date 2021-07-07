@@ -3,5 +3,7 @@ const apiUrl = {
   'movie': 'api/movie/',
   'moreMovie': 'api/movie/status',
   'rank': 'api/movie/rank',
-  'category': 'api/category'
+  'category': 'api/category',
+  'register': 'api/user/register',
+  'login': 'api/user/login'
 };

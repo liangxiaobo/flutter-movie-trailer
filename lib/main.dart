@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_movie/page/home.dart';
+import 'package:flutter_movie/page/login.dart';
 import 'package:flutter_movie/page/moreMovie.dart';
 import 'package:flutter_movie/page/movieDetail.dart';
+import 'package:flutter_movie/page/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,9 +37,11 @@ class MyApp extends StatelessWidget {
 //      home: Home(),
       initialRoute: '/home',
       routes: {
-        '/home': (context) => Home(),
+        Home.routeName: (context) => Home(),
         MovieDetail.routeName: (context) => MovieDetail(),
         MoreMovie.routeName: (context) => MoreMovie(),
+        Login.routeName: (context) => Login(),
+        Register.routeName: (context) => Register(),
       },
     );
   }

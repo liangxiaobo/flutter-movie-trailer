@@ -4,7 +4,11 @@ import 'package:flutter_movie/common/category.dart';
 import 'package:flutter_movie/common/rankTabContent.dart';
 import 'package:flutter_movie/page/tabHome.dart';
 
+import 'login.dart';
+
 class Home extends StatefulWidget {
+  static const routeName = "/home";
+
   Home({Key? key}):super(key: key);
 
   @override
@@ -46,10 +50,15 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: EdgeInsets.only(right: 10, left: 30),
-                child: Icon(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, Login.routeName);
+                  },
+                  child: Icon(
                     Icons.person,
                     size: 30,
                     color: Colors.white70,
+                  ),
                 ),
               ),
             ],
