@@ -25,6 +25,7 @@ class PublicMovieListItem extends StatelessWidget {
               placeholder: 'images/img-loading.png',
               image: movie.poster,
               fit: BoxFit.fill,
+              width: 80,
               height: 108,
             ),
             Expanded(
@@ -34,7 +35,7 @@ class PublicMovieListItem extends StatelessWidget {
                 child: Container(
                   height: 108,
                   child: Stack(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.bottomLeft,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
