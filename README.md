@@ -1,16 +1,9 @@
 # flutter_movie
 
-A new Flutter moive application.
+最近在看Flutter时，为了练手基于 https://github.com/lhz960904/movie-trailer 开源的，电影预告vue项目开发一个Flutter版本的前端。
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 效果截图
+<p>
+<img src="./images/img11.gif" width="320"/>
+<img src="./images/img12.gif" width="320"/>
+</p>
