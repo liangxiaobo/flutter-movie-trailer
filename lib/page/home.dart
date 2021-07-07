@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie/common/category.dart';
 import 'package:flutter_movie/common/rankTabContent.dart';
 import 'package:flutter_movie/page/tabHome.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'login.dart';
 
@@ -16,9 +17,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  void getCacheData() async{
+    final prefs = await SharedPreferences.getInstance();
+    print("打印缓存中的email: ${prefs.getString('email')}");
+  }
+
   @override
   Widget build(BuildContext context) {
     final tabs = ['首页', '分类', '榜单', '搜索'];
+
+    /// TODO 测试缓存
+    getCacheData();
+
     return DefaultTabController(length: 4,
         child:Scaffold(
       appBar: AppBar(

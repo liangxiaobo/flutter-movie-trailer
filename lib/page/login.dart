@@ -5,6 +5,7 @@ import 'package:flutter_movie/http/http.dart';
 import 'package:flutter_movie/http/url.dart';
 import 'package:flutter_movie/page/home.dart';
 import 'package:flutter_movie/page/register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   static const routeName = '/login';
@@ -80,7 +81,7 @@ class _LoginState extends State<Login> {
                   return;
                 }
 
-                postDate(_emailController.text, _passwordController.text).then((response) {
+                postDate(_emailController.text, _passwordController.text).then((response) async {
                   print("登录结果：$response");
                   if(response.data['code'] != 200) {
                     print("注册失败结果: ${response.data['errMsg']}");
@@ -89,6 +90,10 @@ class _LoginState extends State<Login> {
                   }
 
                   if (response.data['data']) {
+                    /// TODO 实际业务应该是存放登录后的用户信息到本地缓存中
+                    final prefs = await SharedPreferences.getInstance();
+                    prefs.setString('email', _emailController.text);
+
                     Navigator.pushNamed(context, Home.routeName);
                   }
                 });

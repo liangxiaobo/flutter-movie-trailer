@@ -33,6 +33,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.Color(int.parse('0xff1c2635'))
 //        primarySwatch: Colors.blue,
         primaryColor: Color(0xff1c2635),
+        appBarTheme: AppBarTheme.of(context).copyWith(
+          brightness: Brightness.dark
+        )
       ),
 //      home: Home(),
       initialRoute: '/home',
